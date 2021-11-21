@@ -1,0 +1,20 @@
+<?php
+    /** @var Amasty\UserName\Block\Form $block */
+?>
+
+<div>
+    <form action="username\index\cart" method="post">
+        <?php if ($block->isVisibleName()) :?>
+             <input type="text" name="sku" placeholder="Товар">
+        <?php endif; ?>
+        <?php if ($block->isVisibleQty()) :?>
+            <input type="number" name="qty" placeholder="Количество" value="<?= $block->getDefaultQty() ?>">
+        <?php endif; ?>
+        <div>
+            <?= $block->getChildHtml(); ?>
+        </div>
+        <input name="form_key" type="hidden" value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
