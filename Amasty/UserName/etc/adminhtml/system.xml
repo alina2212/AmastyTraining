@@ -15,20 +15,23 @@
                     <label>Is Module Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="greeting-text" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="greeting_text" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Hello Text</label>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
                 </field>
-                <field id="is-visible-qty" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="is_visible_qty" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Visible Qty</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="qty-value" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="qty_value" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Qty Value</label>
+                    <depends>
+                        <field id="is_visible_qty">1</field>
+                    </depends>
                 </field>
-                <field id="is-visible-name" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="is_visible_name" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Visible Name</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
