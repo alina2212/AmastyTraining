@@ -97,7 +97,6 @@ class Cart extends Action
 
         try {
             $quote->addProduct($product, $qty);
-            $quote->collectTotals();
             $quote->save();
         } catch (\Exception $exception) {
             $this->messageManager->addErrorMessage('Quote not saved or Product not added');
