@@ -1,0 +1,39 @@
+<?php
+    /** @var Amasty\UserName\Block\Form $block */
+?>
+
+<div data-bind="scope: 'userNameAutocomplete'">
+    <form action="username\index\cart" method="post">
+        <?php if ($block->isVisibleName()) :?>
+             <input id="sku" type="text" name="sku" placeholder="Товар" data-bind="textInput: searchSku">
+        <?php endif; ?>
+        <?php if ($block->isVisibleQty()) :?>
+            <input type="number" name="qty" placeholder="Количество" value="<?= $block->getDefaultQty() ?>">
+        <?php endif; ?>
+        <div>
+            <?= $block->getChildHtml(); ?>
+        </div>
+        <input name="form_key" type="hidden" value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+</div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "userNameAutocomplete": {
+                    "component": "Amasty_UserName/js/autocomplete",
+                    "template": "Amasty_UserName/autocomplete"
+                }
+            }
+        }
+    }
+}
+</script>
+
+
