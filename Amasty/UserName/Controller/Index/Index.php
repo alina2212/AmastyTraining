@@ -6,8 +6,6 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
 
-
-
 class Index extends \Magento\Framework\App\Action\Action
 {
     /** @var ScopeConfigInterface
