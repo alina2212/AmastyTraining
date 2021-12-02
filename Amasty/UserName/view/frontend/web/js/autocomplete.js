@@ -17,7 +17,7 @@ define(['uiComponent', 'jquery'], function (Component, $){
         },
 
         search: function (searchValue) {
-            if (searchValue.length >= 3) {
+            if (this.checkValue(searchValue)) {
                 $.ajax({
                     url: BASE_URL + 'username/index/search',
                     type: 'POST',
@@ -39,6 +39,16 @@ define(['uiComponent', 'jquery'], function (Component, $){
                     }.bind(this)
                 });
             }
+        },
+
+        checkValue: function (value) {
+            var result = false;
+
+            if (value.length >= 3) {
+                result = true;
+            }
+
+            return result;
         },
 
     });
