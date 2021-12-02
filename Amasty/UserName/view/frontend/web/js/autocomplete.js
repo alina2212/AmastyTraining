@@ -13,7 +13,7 @@ define(['uiComponent', 'jquery'], function (Component, $){
 
         initialize: function () {
             this._super();
-            this.searchSku.subscribe(this.search);
+            this.searchSku.subscribe(this.search.bind(this));
         },
 
         search: function (searchValue) {
