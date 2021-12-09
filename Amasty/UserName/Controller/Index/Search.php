@@ -33,7 +33,7 @@ class Search extends \Magento\Framework\App\Action\Action
         $result = $this->resultJsonFactory->create();
         $sku = $this->getRequest()->getParam('searchValue');
         $productCollection = $this->collectionFactory->create();
-        $productCollection->addFieldToFilter('sku', ['like' => '%' . $sku . '%'])->setPageSize(5);
+        $productCollection->addFieldToFilter('sku', ['like' => "%$sku%"])->setPageSize(5);
         $data = [];
 
         foreach ($productCollection->getItems() as $item) {

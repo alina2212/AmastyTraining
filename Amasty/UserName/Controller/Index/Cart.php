@@ -11,6 +11,7 @@ use Magento\Framework\App\Request\Http;
 use Magento\CatalogInventory\Api\StockStateInterface;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Catalog\Model\Product\Type;
 
 class Cart extends Action
 {
@@ -83,14 +84,14 @@ class Cart extends Action
         }
 
         $productId = $product->getId();
-        $availebleQty = $this->getStockQty($productId, 0);
+        $availebleQty = $this->stockState->getStockQty($productId);
 
         if ($qty > $availebleQty) {
            $this->messageManager->addError(__("Not qty"));
            return $resultRedirect;
         }
 
-        if ($product->getTypeId() != \Magento\Catalog\Model\Product\Type::TYPE_SIMPLE) {
+        if ($product->getTypeId() != Type::TYPE_SIMPLE) {
             $this->messageManager->addError(__("Product is not a simple"));
             return $resultRedirect;
         }
@@ -104,10 +105,5 @@ class Cart extends Action
         $this->messageManager->addSuccessMessage('Product added in quote');
 
         return $resultRedirect;
-    }
-
-    public function getStockQty($productId, $websiteId = null)
-    {
-        return $this->stockState->getStockQty($productId, $websiteId);
     }
 }

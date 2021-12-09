@@ -3,7 +3,7 @@
 ?>
 
 <div data-bind="scope: 'userNameAutocomplete'">
-    <form action="username\index\cart" method="post">
+    <form action="<?= $block->getFormAction() ?>" method="post">
         <?php if ($block->isVisibleName()) :?>
              <input id="sku" type="text" name="sku" placeholder="Товар" data-bind="textInput: searchSku">
         <?php endif; ?>

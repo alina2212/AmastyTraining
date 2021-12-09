@@ -1,4 +1,4 @@
-define(['uiComponent', 'jquery'], function (Component, $){
+define(['uiComponent', 'jquery', 'mage/url'], function (Component, $, url){
     return Component.extend({
         defaults: {
             searchSku: ''
@@ -19,7 +19,7 @@ define(['uiComponent', 'jquery'], function (Component, $){
         search: function (searchValue) {
             if (this.checkValue(searchValue)) {
                 $.ajax({
-                    url: BASE_URL + 'username/index/search',
+                    url: url.build('username/index/search'),
                     type: 'POST',
                     dataType: 'json',
                     data: {

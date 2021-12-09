@@ -8,10 +8,14 @@ use Magento\Framework\App\Action\Context;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
-    /** @var ScopeConfigInterface
+    /**
+     * @var ScopeConfigInterface
      */
     private $scopeConfig;
 
+    /**
+     * @var PageFactory
+     */
     public $pageFactory;
 
     public function __construct(

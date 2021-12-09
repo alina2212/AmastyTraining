@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Amasty_SecondUserName" translate="label" sortOrder="10">
+            <label>Amasty Second User Name</label>
+        </tab>
+        <section id="secondusername_config" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Second User Name Module Config</label>
+            <tab>Amasty_SecondUserName</tab>
+            <resource>Amasty_SecondUserName::config</resource>
+            <group id="general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="promo_sku" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promo SKU</label>
+                </field>
+                <field id="for_sku" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>For SKU</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
