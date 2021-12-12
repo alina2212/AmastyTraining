@@ -36,17 +36,17 @@ class Form extends Template
         return $this->scopeConfig->getValue('beautiful_config/general/is_visible_qty');
     }
 
-    public function isVisibleName()
+    public function isVisibleName(): bool
     {
         return $this->scopeConfig->getValue('beautiful_config/general/is_visible_name');
     }
 
-    public function getDefaultQty()
+    public function getDefaultQty() :int
     {
         return $this->scopeConfig->getValue('beautiful_config/general/qty_value') ?: 1;
     }
 
-    public function getFormAction()
+    public function getFormAction() :string
     {
         return self::FORM_ACTION;
     }

@@ -18,12 +18,12 @@ class Hello extends Template
         parent::__construct($context, $data);
     }
 
-    public function getHelloWorld()
+    public function getHelloWorld() :string
     {
         return 'Hello World';
     }
 
-    public function sayHelloConfig()
+    public function sayHelloConfig() :string
     {
        return $this->scopeConfig->getValue('beautiful_config/general/greeting_text');
     }

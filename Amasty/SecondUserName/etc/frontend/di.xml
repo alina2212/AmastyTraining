@@ -6,4 +6,5 @@
     <type name="Magento\Checkout\Controller\Cart\Add">
         <plugin name="MagentoAddPlugin" type="Amasty\SecondUserName\Plugin\MagentoAddPlugin" />
     </type>
+    <preference for="Amasty\UserName\Controller\Index\Index" type="Amasty\SecondUserName\Model\Controller\Index\Index" />
 </config>

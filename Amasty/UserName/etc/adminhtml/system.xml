@@ -35,6 +35,13 @@
                     <label>Visible Name</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="email_template" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" type="select">
+                    <label>Custom Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="email" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email</label>
+                </field>
             </group>
         </section>
     </system>
