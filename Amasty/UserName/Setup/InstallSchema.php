@@ -38,13 +38,6 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
                     [],
                     'qty'
                 )
-                ->addColumn(
-                    'email_body',
-                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-                    255,
-                    ['nullable => false'],
-                    'email_body'
-                )
                 ->setComment('Post Table');
             $installer->getConnection()->createTable($table);
         }
